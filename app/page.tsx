@@ -1169,17 +1169,17 @@ startxref
                     </div>
 
                     <div className="request-actions">
-                      {request.status === "forwarded_to_hod" && (
-                        <button
-                          className="action-button danger"
-                          onClick={() => handleRequestAction(request.id, "reject")}
-                        >
-                          <X size={16} />
-                          Reject
-                        </button>
-                      )}
-                      {request.status === "rejected" && <span className="status-text rejected">Rejected</span>}
-                    </div>
+  {request.status === "forwarded_to_hod" && (
+    <button
+      className="action-button danger"
+      onClick={() => handleOpenModal("reject", request.id)} // MODIFIED
+    >
+      <X size={16} />
+      Reject
+    </button>
+  )}
+  {request.status === "rejected" && <span className="status-text rejected">Rejected</span>}
+</div>
                   </div>
                 ))
               )}
@@ -2183,26 +2183,23 @@ startxref
                     </div>
 
                     <div className="request-actions">
-                      {request.status === "approved" && (
-                        <>
-                          <button
-                            className="action-button success"
-                            onClick={() => downloadApprovalLetter(request)}
-                          >
-                            <Download size={16} />
-                            Download PDF
-                          </button>
-                          <button
-                            className="action-button danger"
-                            onClick={() => handleRequestAction(request.id, "reject")}
-                          >
-                            <X size={16} />
-                            Reject
-                          </button>
-                        </>
-                      )}
-                      {request.status === "rejected" && <span className="status-text rejected">Rejected</span>}
-                    </div>
+  {request.status === "approved" && (
+    <>
+      <button className="action-button success" onClick={() => downloadApprovalLetter(request)}>
+        <Download size={16} />
+        Download PDF
+      </button>
+      <button
+        className="action-button danger"
+        onClick={() => handleOpenModal("reject", request.id)} // MODIFIED
+      >
+        <X size={16} />
+        Reject
+      </button>
+    </>
+  )}
+  {request.status === "rejected" && <span className="status-text rejected">Rejected</span>}
+</div>
                   </div>
                 ))
               )}
