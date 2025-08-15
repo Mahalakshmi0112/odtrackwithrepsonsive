@@ -1365,3 +1365,33 @@ body {
     font-size: 0.8rem;
   }
 }
+@media (max-width: 768px) {
+  .profile-avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .profile-avatar-small img {
+   width: 28px; /* Adjust size as needed, ensuring width and height are the same */
+   height: 28px; /* Adjust size as needed, ensuring width and height are the same */
+   object-fit: cover;
+   border-radius: 50%; /* Ensures circular shape */
+ }
+
+.request-card .student-avatar {
+   width: 45px; /* Adjust size as needed, ensuring width and height are the same */
+   height: 36px; /* Adjust size as needed, ensuring width and height are the same */
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: bold;
+   color: #ffffff;
+   background-color: #4f46e5;
+ }
+}
